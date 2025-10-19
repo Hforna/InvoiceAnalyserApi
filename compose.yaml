@@ -1,0 +1,7 @@
+﻿services:
+  invoiceanalyzer.api:
+    image: invoiceanalyzer.api
+    build:
+      context: .
+      dockerfile: InvoiceAnalyzer.Api/Dockerfile
+

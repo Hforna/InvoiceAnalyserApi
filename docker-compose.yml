@@ -1,0 +1,21 @@
+services:
+  invoiceanalyzer.api:
+    image: ${DOCKER_REGISTRY-}invoiceanalyzerapi
+    build:
+      context: .
+      dockerfile: InvoiceAnalyzer.Api/Dockerfile
+    depends_on:
+        - sqlserver
+    networks:
+        - backend
+
+  sqlserver:
+      container_name: sqlserver
+      image: mcr.microsoft.com/mssql/server:2019-latest
+
+
+volumes:
+  sqlserverData:
+
+networks:
+  backend: 
