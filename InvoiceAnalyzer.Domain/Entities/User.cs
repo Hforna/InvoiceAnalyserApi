@@ -4,12 +4,6 @@ namespace InvoiceAnalyzer.Domain.Entities;
 
 public class User : IdentityUser<Guid>
 {
-    
-}
-
-public class Role : IdentityRole<Guid>
-{
-    public Role() : base() { }
-
-    public Role(string roleName) : base(roleName) { }
+    public DateTime RefreshTokenExpires { get; set; }
+    public string RefreshToken { get; set; }
 }
